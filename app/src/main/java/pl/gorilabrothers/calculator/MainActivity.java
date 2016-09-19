@@ -55,15 +55,79 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
 
+            case R.id.buttonMinus:
+
+                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "minus");
+
+                } else {
+                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
+                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
+                            function.get(KeysForCoplection.SECOND_VALUE),
+                            function.get(KeysForCoplection.EX_OPERATION)));
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "minus");
+                    function.put(KeysForCoplection.EX_OPERATION, "null");
+                }
+
+                break;
+
+            case R.id.buttonMultime:
+
+                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "multime");
+
+                } else {
+                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
+                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
+                            function.get(KeysForCoplection.SECOND_VALUE),
+                            function.get(KeysForCoplection.EX_OPERATION)));
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "multime");
+                    function.put(KeysForCoplection.EX_OPERATION, "null");
+                }
+
+                break;
+
+            case R.id.buttonDivide:
+
+                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "divide");
+
+                } else {
+                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
+                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
+                            function.get(KeysForCoplection.SECOND_VALUE),
+                            function.get(KeysForCoplection.EX_OPERATION)));
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "divide");
+                    function.put(KeysForCoplection.EX_OPERATION, "null");
+                }
+
+                break;
+
             case R.id.buttonEquals:
-                function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
 
-                field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
-                        function.get(KeysForCoplection.SECOND_VALUE),
-                        function.get(KeysForCoplection.EX_OPERATION)));
+                if (!function.get(KeysForCoplection.EX_OPERATION).equals("null")) {
 
-                function.put(KeysForCoplection.OPERATION, "equals");
-                function.put(KeysForCoplection.EX_OPERATION, "null");
+                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
+
+                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
+                            function.get(KeysForCoplection.SECOND_VALUE),
+                            function.get(KeysForCoplection.EX_OPERATION)));
+
+                    function.put(KeysForCoplection.OPERATION, "equals");
+                    function.put(KeysForCoplection.EX_OPERATION, "null");
+                }
 
 
                 break;
