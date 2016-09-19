@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         function.put(KeysForCoplection.OPERATION, "null");
         function.put(KeysForCoplection.EX_OPERATION, "null");
+
+
     }
 
     public void onButtonClick(View view) {
@@ -128,6 +130,31 @@ public class MainActivity extends AppCompatActivity {
                     function.put(KeysForCoplection.OPERATION, "equals");
                     function.put(KeysForCoplection.EX_OPERATION, "null");
                 }
+
+
+                break;
+
+
+            case R.id.buttonDelete:
+
+                view.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    field.setText("0");
+                    return false;
+                }
+                });
+
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (field.getText().length() == 0) {
+                            field.setText("0");
+                        } else {
+                            field.getText().delete(field.getText().length()-1, field.getText().length());
+                        }
+                    }
+                });
 
 
                 break;
