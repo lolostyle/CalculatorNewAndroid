@@ -37,8 +37,21 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.buttonPlus:
 
-                function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-                function.put(KeysForCoplection.OPERATION, "plus");
+                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "plus");
+
+                } else {
+                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
+                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
+                            function.get(KeysForCoplection.SECOND_VALUE),
+                            function.get(KeysForCoplection.EX_OPERATION)));
+
+                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+                    function.put(KeysForCoplection.OPERATION, "plus");
+                    function.put(KeysForCoplection.EX_OPERATION, "null");
+                }
 
                 break;
 
@@ -50,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         function.get(KeysForCoplection.EX_OPERATION)));
 
                 function.put(KeysForCoplection.OPERATION, "equals");
+                function.put(KeysForCoplection.EX_OPERATION, "null");
 
 
                 break;
@@ -62,9 +76,18 @@ public class MainActivity extends AppCompatActivity {
                         field.getText().toString().equals("0") |
                         !function.get(KeysForCoplection.OPERATION).equals("null")) {
 
-                    field.setText(view.getContentDescription().toString());
-                    function.put(KeysForCoplection.EX_OPERATION, function.get(KeysForCoplection.OPERATION));
-                    function.put(KeysForCoplection.OPERATION, "null");
+                    if (function.get(KeysForCoplection.OPERATION).equals("equals")) {
+
+                        field.setText(view.getContentDescription().toString());
+                        function.put(KeysForCoplection.EX_OPERATION, "null");
+                        function.put(KeysForCoplection.OPERATION, "null");
+
+                    } else {
+
+                        field.setText(view.getContentDescription().toString());
+                        function.put(KeysForCoplection.EX_OPERATION, function.get(KeysForCoplection.OPERATION));
+                        function.put(KeysForCoplection.OPERATION, "null");
+                    }
 
 
                 } else {
