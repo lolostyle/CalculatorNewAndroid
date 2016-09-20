@@ -159,7 +159,13 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
 
+            case R.id.buttonPoint:
 
+                if (!field.getText().toString().contains(",")) {
+                    field.setText(field.getText() + ",");
+                }
+
+                break;
 
             default:
 

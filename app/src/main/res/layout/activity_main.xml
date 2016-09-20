@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pl.gorilabrothers.calculator.MainActivity">
+    tools:context="pl.gorilabrothers.calculator.MainActivity"
+    android:background="#de161616">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -22,14 +23,16 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/editText"
             android:layout_weight="1"
             android:focusable="false"
             android:text="0"
-            android:gravity="right" />
+            android:gravity="center_vertical|right"
+            android:background="@drawable/field"
+            android:paddingRight="20dp" />
 
         <Button
             android:layout_width="fill_parent"
@@ -37,7 +40,9 @@
             android:text="@string/button_delete"
             android:id="@+id/buttonDelete"
             android:layout_weight="4"
-            android:onClick="onButtonClick" />
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_delete"
+            android:textColor="@drawable/text_button_delete" />
     </LinearLayout>
 
     <TableLayout
@@ -61,7 +66,9 @@
                 android:id="@+id/button7"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_7" />
+                android:contentDescription="@string/button_7"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -70,7 +77,9 @@
                 android:id="@+id/button8"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_8" />
+                android:contentDescription="@string/button_8"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -79,7 +88,9 @@
                 android:id="@+id/button9"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_9" />
+                android:contentDescription="@string/button_9"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -87,7 +98,9 @@
                 android:text="@string/button_divide"
                 android:id="@+id/buttonDivide"
                 android:layout_weight="1"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:background="@drawable/button_operation"
+                android:textColor="@drawable/text_button_grey_lignt" />
         </TableRow>
 
         <TableRow
@@ -102,7 +115,9 @@
                 android:id="@+id/button4"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_4" />
+                android:contentDescription="@string/button_4"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -111,7 +126,9 @@
                 android:id="@+id/button5"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_5" />
+                android:contentDescription="@string/button_5"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -120,7 +137,9 @@
                 android:id="@+id/button6"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_6" />
+                android:contentDescription="@string/button_6"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -128,7 +147,9 @@
                 android:text="@string/button_multime"
                 android:id="@+id/buttonMultime"
                 android:layout_weight="1"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:background="@drawable/button_operation"
+                android:textColor="@drawable/text_button_grey_lignt" />
         </TableRow>
 
         <TableRow
@@ -143,7 +164,9 @@
                 android:id="@+id/button1"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_1" />
+                android:contentDescription="@string/button_1"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -152,7 +175,9 @@
                 android:id="@+id/button2"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_2" />
+                android:contentDescription="@string/button_2"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -161,7 +186,9 @@
                 android:id="@+id/button3"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_3" />
+                android:contentDescription="@string/button_3"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -169,7 +196,9 @@
                 android:text="@string/button_minus"
                 android:id="@+id/buttonMinus"
                 android:layout_weight="1"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:background="@drawable/button_operation"
+                android:textColor="@drawable/text_button_grey_lignt" />
         </TableRow>
 
         <TableRow
@@ -180,19 +209,23 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:text="@string/button_0"
-                android:id="@+id/button0"
+                android:text="@string/button_point"
+                android:id="@+id/buttonPoint"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:contentDescription="@string/button_0" />
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:text="@string/button_point"
-                android:id="@+id/buttonPoint"
+                android:text="@string/button_0"
+                android:id="@+id/button0"
                 android:layout_weight="1"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:contentDescription="@string/button_0"
+                android:background="@drawable/button_all"
+                android:textColor="@drawable/text_button_all" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -200,7 +233,9 @@
                 android:text="@string/button_equals"
                 android:id="@+id/buttonEquals"
                 android:layout_weight="1"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:background="@drawable/button_equals"
+                android:textColor="@drawable/text_button_equals" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -208,7 +243,9 @@
                 android:text="@string/button_plus"
                 android:id="@+id/buttonPlus"
                 android:layout_weight="1"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:background="@drawable/button_operation"
+                android:textColor="@drawable/text_button_grey_lignt" />
         </TableRow>
 
     </TableLayout>
