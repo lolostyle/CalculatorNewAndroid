@@ -8,6 +8,7 @@ public enum KeysForCoplection {
     FIRST_VALUE,
     SECOND_VALUE,
     OPERATION,
-    EX_OPERATION
+    EX_OPERATION,
+    FIRST_START
 
 }
