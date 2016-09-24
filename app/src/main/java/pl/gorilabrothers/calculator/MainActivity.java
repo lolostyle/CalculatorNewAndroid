@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 field.setText(field.getText().delete(field.getText().length() - 1, field.getText().length()));
-                if (field.getText().toString().trim().length() == 0) {
+                if (field.getText().toString().trim().length() == 0 |
+                        field.getText().toString().equals("-")) {
                     field.setText("0");
                 }
 
@@ -64,43 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.buttonPlus:
 
-//                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "plus");
-//
-//                } else {
-//                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
-//                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
-//                            function.get(KeysForCoplection.SECOND_VALUE),
-//                            function.get(KeysForCoplection.EX_OPERATION)));
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "plus");
-//                    function.put(KeysForCoplection.EX_OPERATION, "null");
-//                }
-
                 doCalc("plus");
 
                 break;
 
             case R.id.buttonMinus:
-
-//                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "minus");
-//
-//                } else {
-//                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
-//                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
-//                            function.get(KeysForCoplection.SECOND_VALUE),
-//                            function.get(KeysForCoplection.EX_OPERATION)));
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "minus");
-//                    function.put(KeysForCoplection.EX_OPERATION, "null");
-//                }
 
                 doCalc("minus");
 
@@ -108,50 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.buttonMultime:
 
-//                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "multime");
-//
-//                } else {
-//                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
-//                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
-//                            function.get(KeysForCoplection.SECOND_VALUE),
-//                            function.get(KeysForCoplection.EX_OPERATION)));
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "multime");
-//                    function.put(KeysForCoplection.EX_OPERATION, "null");
-//                }
                 doCalc("multime");
 
                 break;
 
             case R.id.buttonDivide:
-
-
-//                if (function.get(KeysForCoplection.EX_OPERATION).equals("null")){
-//
-//                    if (!field.getText().toString().equals("0")) {
-//                        function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                        function.put(KeysForCoplection.OPERATION, "divide");
-//
-//                    }
-//
-//                } else {
-//
-//
-//                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
-//                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
-//                            function.get(KeysForCoplection.SECOND_VALUE),
-//                            function.get(KeysForCoplection.EX_OPERATION)));
-//
-//                    function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-//                    function.put(KeysForCoplection.OPERATION, "divide");
-//                    function.put(KeysForCoplection.EX_OPERATION, "null");
-//
-//
-//                }
 
                 doCalc("divide");
 
@@ -160,19 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.buttonEquals:
 
-//                if (!function.get(KeysForCoplection.EX_OPERATION).equals("null")) {
-//
-//                    function.put(KeysForCoplection.SECOND_VALUE, field.getText().toString());
-//
-//                    field.setText(operation.Calc(function.get(KeysForCoplection.FIRST_VALUE),
-//                            function.get(KeysForCoplection.SECOND_VALUE),
-//                            function.get(KeysForCoplection.EX_OPERATION)));
-//
-//                    function.put(KeysForCoplection.OPERATION, "equals");
-//                    function.put(KeysForCoplection.EX_OPERATION, "null");
-//                }
                 doCalc("equals");
-
 
                 break;
 
@@ -221,19 +139,19 @@ public class MainActivity extends AppCompatActivity {
                     function.put(KeysForCoplection.OPERATION, o);
 
                 }
-            } else if (o.equals("multime")) {
+            } else {
                 if (!field.getText().toString().equals("0")) {
                     function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
                     function.put(KeysForCoplection.OPERATION, o);
 
                 } else {
-                    Toast.makeText(this, "First digit is 0.", Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "First digit is 0.", Toast.LENGTH_SHORT).show();
                     function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
                     function.put(KeysForCoplection.OPERATION, o);
                 }
-            } else {
-                function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
-                function.put(KeysForCoplection.OPERATION, o);
+//            } else {
+//                function.put(KeysForCoplection.FIRST_VALUE, field.getText().toString());
+//                function.put(KeysForCoplection.OPERATION, o);
             }
 
         } else {
